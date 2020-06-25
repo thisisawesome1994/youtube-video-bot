@@ -6,38 +6,30 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.proxy import Proxy, ProxyType
 from selenium.webdriver.chrome.options import Options
 import time
+import random
 views = int(input("enter no. of view: "))
-view_time = float(input('enter time for each view: '))
-
+cycle_time = float(input('Enter time for each view:'))
+#view_time = float(input('enter total time for all views: '))
+proxy = random.choice(open('proxies.txt').readlines())
+useragent = random.choice(open('useragents.txt').readlines())
 
 for i in range(views):
-    with open('links.txt', 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-        for url in lines:
-            with open('proxies.txt', 'r', encoding='utf-8') as f:
-                lines = f.readlines()
-                for proxy in lines:
-                    with open('username.txt', 'r', encoding='utf-8') as f:
-                        lines = f.readlines()
-                        for username in lines:
-                            with open('password.txt', 'r', encoding='utf-8') as f:
-                                lines = f.readlines()
-                                for password in lines:
-                                    with open('useragents.txt', 'r', encoding='utf-8') as f:
-                                        lines = f.readlines()
-                                        for useragent in lines:
-                                            opts1 = Options()
-                                            opts1.add_argument('--user-agent=%s'% useragent)
-                                            #opts1.add_argument('--mute-audio')
-                                            opts1.add_argument('--incognito')
-                                            opts1.add_argument('--proxy-server=%s'% proxy)
-                                            #opts1.add_argument('--headless')
-                                            opts1.add_argument('--start-maximized')
-                                            browser1 = webdriver.Chrome(options=opts1)
-                                            browser1.execute_script("window.location.replace(arguments[0])", url)
-                                            time.sleep(10)
-                                            play_music_1 = browser1.find_element_by_xpath(""" //*[@id="movie_player"]/div[5]/button """)
-                                            play_music_1.click()
-                                            time.sleep(view_time)
-                                            browser1.quit()
-                                            # script by thisisawesome1994
+    opts1 = Options()
+    opts1.add_argument('--user-agent=%s'% useragent)
+#opts1.add_argument('--mute-audio')
+opts1.add_argument('--incognito')
+#opts1.add_argument('--headless')
+opts1.add_argument('--proxy-server=%s'% proxy)
+opts1.add_argument('--start-maximized')
+browser1 = webdriver.Chrome(options=opts1)
+with open('links.txt', 'r', encoding='utf-8') as f:
+    lines = f.readlines()
+for url in lines:
+    browser1.get(url)
+    time.sleep(cycle_time)
+browser1.quit()
+#time.sleep(10)
+#play_music_1 = browser1.find_element_by_xpath(""" //*[@id="movie_player"]/div[5]/button """)
+#play_music_1.click()
+
+# script by thisisawesome1994
