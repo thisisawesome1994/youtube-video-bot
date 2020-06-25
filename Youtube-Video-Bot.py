@@ -24,7 +24,7 @@ opts1.add_argument('--proxy-server=%s'% proxy)
 opts1.add_argument('--start-maximized')
 browser1 = webdriver.Chrome(options=opts1)
 browser1.get(url)
-time.sleep(5)
+time.sleep(8)
 if len(browser1.find_elements_by_xpath("//button[@class='ytp-large-play-button ytp-button']")) > 0:
     browser1.find_element_by_xpath("//button[@class='ytp-large-play-button ytp-button']").click()
     time.sleep(9)
