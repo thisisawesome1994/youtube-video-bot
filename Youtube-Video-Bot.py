@@ -27,11 +27,11 @@ browser1.get(url)
 time.sleep(10)
 if len(browser1.find_elements_by_xpath("//button[@class='ytp-large-play-button ytp-button']")) > 0:
     browser1.find_element_by_xpath("//button[@class='ytp-large-play-button ytp-button']").click()
-    time.sleep(randint(36,360))
+    time.sleep(randint(36,72))
     os.startfile("launch.exe")
     browser1.quit()
 else:
-    time.sleep(randint(36,360))
+    time.sleep(randint(36,72))
     os.startfile("launch.exe")
     browser1.quit()
 #time.sleep(10)
