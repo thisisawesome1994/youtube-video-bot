@@ -24,18 +24,32 @@ opts1.add_argument('--proxy-server=%s'% proxy)
 opts1.add_argument('--start-maximized')
 browser1 = webdriver.Chrome(options=opts1)
 browser1.get(url)
-time.sleep(10)
+time.sleep(4)
 if len(browser1.find_elements_by_xpath("//button[@class='ytp-large-play-button ytp-button']")) > 0:
     browser1.find_element_by_xpath("//button[@class='ytp-large-play-button ytp-button']").click()
-    time.sleep(randint(36,72))
-    os.startfile("launch.exe")
-    browser1.quit()
+    time.sleep(9)
+    if len(browser1.find_elements_by_xpath("//button[@class='ytp-ad-skip-button ytp-button']")) > 0:
+        browser1.find_element_by_xpath("//button[@class='ytp-ad-skip-button ytp-button']").click()
+        time.sleep(randint(36,72))
+        os.startfile("launch.exe")
+        browser1.quit()
+    else:
+        time.sleep(randint(36,72))
+        os.startfile("launch.exe")
+        browser1.quit()
 else:
-    time.sleep(randint(36,72))
-    os.startfile("launch.exe")
-    browser1.quit()
+    time.sleep(9)
+    if len(browser1.find_elements_by_xpath("//button[@class='ytp-ad-skip-button ytp-button']")) > 0:
+        browser1.find_element_by_xpath("//button[@class='ytp-ad-skip-button ytp-button").click()
+        time.sleep(randint(36,72))
+        os.startfile("launch.exe")
+        browser1.quit()
+    else:
+        time.sleep(randint(36,72))
+        os.startfile("launch.exe")
+        browser1.quit()
 #time.sleep(10)
 #play_music_1 = browser1.find_element_by_xpath(""" //*[@id="movie_player"]/div[5]/button """)
 #play_music_1.click()
-
+#//*[@id='ad-text:b']
 # script by thisisawesome1994
