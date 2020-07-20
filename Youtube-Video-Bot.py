@@ -11,26 +11,57 @@ import time
 import os
 import random
 
-proxy = random.choice(open('proxies.txt').readlines())
-useragent = random.choice(open('useragents.txt').readlines())
-url = random.choice(open('links.txt').readlines())
+loop_time = int(input("Enter time to run the bot"))
+views = int(input("Enter amount of loops"))
 
-opts1 = Options()
-opts1.add_argument('--user-agent=%s'% useragent)
-#opts1.add_argument('--mute-audio')
-opts1.add_argument('--incognito')
-opts1.add_argument('--proxy-server=%s'% proxy)
-#opts1.add_argument('--headless')
-opts1.add_argument('--start-maximized')
-opts1.add_argument('--disable-gpu')
+for i in range(views):
+    proxy = random.choice(open('proxies.txt').readlines())
+    useragent = random.choice(open('useragents.txt').readlines())
+    url = random.choice(open('links.txt').readlines())
 
-browser1 = webdriver.Chrome(options=opts1)
-browser1.execute_script("window.location.replace(arguments[0])", url)
-time.sleep(8)
-browser1.find_element_by_xpath(""" //*[@id="content"]/a """).click()
-time.sleep(randint(180,3200))
-os.startfile("launch.exe")
-browser1.quit()
+    opts1 = Options()
+    opts1.add_argument('--user-agent=%s'% useragent)
+    #opts1.add_argument('--mute-audio')
+    opts1.add_argument('--incognito')
+    opts1.add_argument('--proxy-server=%s'% proxy)
+    #opts1.add_argument('--headless')
+    opts1.add_argument('--start-maximized')
+    opts1.add_argument('--disable-gpu')
+
+    browser1 = webdriver.Chrome(options=opts1)
+    
+    browser1.execute_script("window.location.replace(arguments[0])", url)
+    try:
+        element = WebDriverWait(browser1, 30).until(
+            EC.presence_of_element_located((By.XPATH, """ //*[@id="content"]/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[5]/button """))
+        )
+    finally:
+        browser1.find_element_by_xpath(""" //*[@id="content"]/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[5]/button """).click()
+    #if ytplay.is_displayed():
+#    ytplay.click()
+#    print("Starting...")
+#    else ytplay.click()
+    time.sleep(12)
+    browser1.minimize_window()
+    time.sleep(loop_time)
+#aria_valuenow = browser1.find_element_by_css_selector('span').get_attribute("aria-valuenow")
+#next_button = browser1.find_element_by_xpath(""" //*[@id="left-controls"]/div/paper-icon-button[3] """)
+#playback = aria-value="89"
+#time.sleep(wait)
+    browser1.close()
+#try:
+#    element_next = WebDriverWait(browser1, 100).until(
+#        EC.visibility_of_element_located((By.CSS_SELECTOR, 'aria-valuenow=89'))
+#    )
+#finally:
+    
+
+
+#if ():
+#    next_button.click()
+#    else browser1.close()
+#time.sleep(randint(180,3200))
+#browser1.close()
 
 
 # script by thisisawesome1994
