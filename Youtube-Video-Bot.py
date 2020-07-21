@@ -31,12 +31,6 @@ for i in range(views):
     browser1 = webdriver.Chrome(options=opts1)
     
     browser1.execute_script("window.location.replace(arguments[0])", url)
-    try:
-        element = WebDriverWait(browser1, 30).until(
-            EC.presence_of_element_located((By.XPATH, """ //*[@id="content"]/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[5]/button """))
-        )
-    finally:
-        browser1.find_element_by_xpath(""" //*[@id="content"]/ytd-page-manager/ytd-watch-flexy/div[4]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[5]/button """).click()
     #if ytplay.is_displayed():
 #    ytplay.click()
 #    print("Starting...")
