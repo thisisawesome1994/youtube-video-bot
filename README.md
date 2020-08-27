@@ -4,8 +4,8 @@
 
 Install dotnet35 and all versions of 4.0(4.0, 4.7, 4.8 etc)</br>
 Install c++ redistributables: https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/</br>
-Install Google Chrome: www.google.com/chrome
-Install coresponding chromedriver in same directory as the bot: https://chromedriver.chromium.org/
+Install Google Chrome: www.google.com/chrome</br>
+Install coresponding chromedriver in same directory as the bot: https://chromedriver.chromium.org/</br>
 
 To launch, open bat scripts, and adjust arguments.
 
