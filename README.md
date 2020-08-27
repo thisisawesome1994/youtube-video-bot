@@ -24,3 +24,6 @@ Run these commands:
 - pip install pyinstaller
 
 3. ......
+
+
+[Runs both www.youtube.com/watch as music.youtube.com/watch links!!]
