@@ -2,14 +2,14 @@
 
 <b>- To launch the executable<b>
 
-Install dotnet35 and all versions of 4.0(4.0, 4.7, 4.8 etc)
-Install c++ redistributables: https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/
+Install dotnet35 and all versions of 4.0(4.0, 4.7, 4.8 etc)</br>
+Install c++ redistributables: https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/</br>
 
 To launch, open bat scripts, and adjust arguments.
 
--c  --cycles  | Amount of cycles to run application
--t  --min     | Minimal time to run a view
--m  --max     | Maximal time to run a view
+-c  --cycles  | Amount of cycles to run application</br>
+-t  --min     | Minimal time to run a view</br>
+-m  --max     | Maximal time to run a view</br>
 
 <b>- To run python script<b>
 
