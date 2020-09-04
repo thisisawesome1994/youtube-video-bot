@@ -29,3 +29,5 @@ Run these commands:
 
 
 [Runs both www.youtube.com/watch as music.youtube.com/watch links!!]
+
+Note: launch.exe launches 60 threads using launch.bat, and requires dotnet 4.8, and a 12 core/24 thread processor, or a dual socket 6 core 12 thread, making the total 12 core 24 thread. Passmark as of 4-9-2020 should be around 13k.
