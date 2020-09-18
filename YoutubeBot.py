@@ -63,6 +63,8 @@ for i in range(args.cycles):
     opts1.add_argument('--start-maximized')
     opts1.add_argument('--disable-gpu')
     opts1.add_argument('--autoplay-policy=no-user-gesture-required')
+    opts1.add_argument('--no-sandbox')
+    opts1.add_argument('--disable-dev-shm-usage')
 
     browser1 = webdriver.Chrome(options=opts1)
     browser1.get(url1)
