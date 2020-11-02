@@ -7,7 +7,7 @@ Install c++ redistributables: https://www.techpowerup.com/download/visual-c-redi
 Install Google Chrome: www.google.com/chrome</br>
 Install coresponding chromedriver in same directory as the bot: https://chromedriver.chromium.org/</br>
 
-To launch, open bat scripts, and adjust arguments.
+To launch, open bat scripts, and adjust arguments.</br>
 
 -c  --cycles  | Amount of cycles to run application</br>
 -t  --min     | Minimal time to run a view</br>
@@ -30,4 +30,5 @@ Run these commands:
 
 [Runs both www.youtube.com/watch as music.youtube.com/watch links!!]
 
-Note: launch.exe launches 60 threads using launch.bat, and requires dotnet 4.8, and a 6 core/12 thread processor. Passmark as of 4-9-2020 should be 13k
+Note: launch.exe launches 60 threads using launch.bat, and requires dotnet 4.8, and a 12 core/24 thread processor. Passmark as of 4-9-2020 should be around 13k.
+I included the visual studio code file, so you can create your own launch.exe adjusted to your situation.
