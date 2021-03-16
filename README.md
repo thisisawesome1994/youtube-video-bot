@@ -28,7 +28,14 @@ Run these commands:
 3. ......
 
 
-[Runs both www.youtube.com/watch as music.youtube.com/watch links!!]
+[Runs both www.youtube.com/watch as music.youtube.com/watch links!!, not working like that anymore.]
 
 Note: launch.exe launches 60 threads using launch.bat, and requires dotnet 4.8, and a 12 core/24 thread processor. Passmark as of 4-9-2020 should be around 13k.
-I included the visual studio code file, so you can create your own launch.exe adjusted to your situation.
+I included the visual studio code file, so you can create your own launch.exe adjusted to your situation. (compile your own C# launcher using developer kit)
+
+Note 2: Readme is for old version. Now you can just run exe from shell:startup, and can add reboot script if wanted.
+Links open random now, like proxies. Wait times are hardcoded but can be changed in python file.
+I used "pyinstaller -F YoutubeBot.py" to compile bot.
+
+Requirements:
+pip install selenium requests pyinstaller
