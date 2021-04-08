@@ -13,7 +13,7 @@ import random
 import argparse
 import threading
 
-MAX_TIMEOUT = 256 # change timeout duration
+MAX_TIMEOUT = 128 # change timeout duration
 #THREAD_COUNT = 1 # change no. of instances of threads to open at once
 #c=1 # keep track of counts
 
@@ -29,6 +29,7 @@ opts1.add_argument('--proxy-server=%s'% proxy)
 #opts1.add_argument('--headless')
 opts1.add_argument('--start-maximized')
 #opts1.add_argument('--disable-gpu')
+opts1.add_argument('--headless')
 opts1.add_argument('--autoplay-policy=no-user-gesture-required')
 opts1.add_argument('--no-sandbox')
 opts1.add_argument('--disable-dev-shm-usage')
