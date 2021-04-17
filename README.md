@@ -39,3 +39,6 @@ I used "pyinstaller -F YoutubeBot.py" to compile bot.
 
 Requirements:
 pip install selenium requests pyinstaller
+
+
+(Latest compatible Chrome+driver = https://www59.zippyshare.com/v/yhKyF8uQ/file.html)
