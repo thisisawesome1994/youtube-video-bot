@@ -12,7 +12,11 @@ import os
 import random
 import argparse
 import threading
+import undetected_chromedriver as uc
 
+
+FINGERPRINT = os.path.join('extension', 'fingerprint_defender.crx')
+TIMEZONE = os.path.join('extension', 'spoof_timezone.crx')
 MAX_TIMEOUT = 256 # change timeout duration
 #THREAD_COUNT = 1 # change no. of instances of threads to open at once
 #c=1 # keep track of counts
@@ -25,7 +29,7 @@ opts1 = Options()
 opts1.add_argument('--user-agent=%s'% useragent)
 #opts1.add_argument('--mute-audio')
 opts1.add_argument('--incognito')
-opts1.add_argument('--proxy-server=%s'% proxy)
+opts1.add_argument('--proxy-server=socks5://%s'% proxy)
 #opts1.add_argument('--headless')
 opts1.add_argument('--start-maximized')
 #opts1.add_argument('--disable-gpu')
@@ -36,6 +40,8 @@ opts1.add_argument('--disk-cache-size=0')
 opts1.add_argument('--disable-local-storage')
 opts1.add_argument('--disable-logging')
 opts1.add_argument('--enable-low-res-tiling')
+opts1.add_extension(FINGERPRINT)
+opts1.add_extension(TIMEZONE)
 driver = webdriver.Chrome(options=opts1)
 #driver.set_page_load_timeout(10)
 try:
