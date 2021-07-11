@@ -15,9 +15,11 @@ import threading
 import undetected_chromedriver as uc
 import requests
 
-FINGERPRINT = os.path.join('extension', 'fingerprint_defender.crx')
-TIMEZONE = os.path.join('extension', 'spoof_timezone.crx')
-MAX_TIMEOUT = 256 # change timeout duration
+FINGERPRINT = os.path.join('extension', 'fingerprint_defender.zip')
+TIMEZONE = os.path.join('extension', 'spoof_timezone.zip')
+#WEBRTC = os.path.join('extension', 'webrtc_control.zip')
+#ACTIVE = os.path.join('extension', 'always_active.zip')
+MAX_TIMEOUT = 400 # change timeout duration
 #THREAD_COUNT = 1 # change no. of instances of threads to open at once
 #c=1 # keep track of counts
 url = random.choice(open('links.txt').readlines())
@@ -64,4 +66,4 @@ try:
 except:
     driver.quit()
 finally:
-    os.startfile('YoutubeBot.exe')
+    driver.quit()
