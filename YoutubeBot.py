@@ -37,7 +37,7 @@ CHROME = ['{8A69D345-D564-463c-AFF1-A69D9E530F96}',
         '{401C381F-E0DE-4B85-8BD8-3F3F14FBDA57}',
         '{4ea16ac7-fd5a-47c3-875b-dbf4a2008c20}']
 
-opts1 = Options()
+opts1 = webdriver.ChromeOptions()
 opts1.add_argument('--user-agent=%s'% useragent)
 opts1.add_argument('--mute-audio')
 #opts1.add_argument('--incognito')
@@ -55,7 +55,7 @@ opts1.add_argument('--enable-low-res-tiling')
 opts1.add_experimental_option('useAutomationExtension', False)
 opts1.add_extension(FINGERPRINT)
 opts1.add_extension(TIMEZONE)
-driver = webdriver.Chrome(options=opts1)
+driver = uc.Chrome(options=opts1)
 #driver.DesiredCapabilities.CHROME['loggingPrefs'] = {
 #    'driver': 'OFF', 'server': 'OFF', 'browser': 'OFF'}
 #driver.set_page_load_timeout(10)
